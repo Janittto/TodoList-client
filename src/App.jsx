@@ -4,6 +4,8 @@ import Home from "./pages/Home"
 import Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
 import Profile from "./pages/Profile"
+import Todo from "./pages/Todo"
+import OneList from "./pages/OneList"
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute"
 import LoggedOut from "./components/LoggedOut/LoggedOut"
 
@@ -20,6 +22,8 @@ function App() {
 				<Route element={<PrivateRoute />}>
 					{/* All routes after the PrivateRoute require the user to be loggedIn */}
 					<Route path="/profile" element={<Profile />} />
+					<Route path="/todo" element={<Todo />} />
+					<Route path="/todo/:id" element={<OneList />} />
 				</Route>
 			</Routes>
 		</div>

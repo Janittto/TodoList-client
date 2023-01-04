@@ -1,0 +1,8 @@
+.list-card > div {
+    width: 100%;
+    margin-bottom: 30px;;
+}
+
+.urgent {
+    background-color: red;
+}

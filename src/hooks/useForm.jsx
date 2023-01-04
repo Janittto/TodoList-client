@@ -5,7 +5,9 @@ const useForm = (initialValues) => {
 	const handleChange = (e) => {
 		setValues({
 			...values,
-			[e.target.name]: e.target.value,
+			//[e.target.name]: e.target.value,
+			[e.target.name]:
+			e.target.type === "checkbox" ? (e.target.checked ? true : false) : e.target.value
 		})
 	}
 	const reset = () => {

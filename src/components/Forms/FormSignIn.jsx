@@ -15,13 +15,14 @@ const FormSignIn = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
+		console.log({email})
 		apiHandler
 			.signin({ email, password })
 			.then((res) => {
 				console.log(res)
 				storeToken(res.authToken)
 				authenticateUser()
-				navigate("/")
+				navigate("/profile")
 			})
 			.catch((e) => {
 				setError(e.response.data)

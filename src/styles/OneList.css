@@ -1,0 +1,9 @@
+.one-list .box-container {
+    position: relative;
+}
+
+.edit-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

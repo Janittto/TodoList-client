@@ -1,0 +1,27 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+    border: 1px solid grey;
+    padding: 50px;
+}
+
+.box-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea, form button {
+    border-radius: 5px;
+    border: none;
+    background-color: lightgray;
+    padding: 5px 15px;
+}
