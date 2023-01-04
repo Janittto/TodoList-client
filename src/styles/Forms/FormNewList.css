@@ -1,3 +1,4 @@
+
 .box {
     display: flex;
     flex-direction: column;
@@ -22,6 +23,28 @@
 form input, form textarea, form button {
     border-radius: 5px;
     border: none;
-    background-color: lightgray;
     padding: 5px 15px;
 }
+
+form input, form textarea {
+    background-color: var(--purpleo);
+}
+
+@media screen and (max-width: 390px) {
+    .add-btn {
+        position: fixed;
+        bottom: 0;
+    }
+    .box-container {
+        width: 100vw;
+        padding: 2rem;
+    }
+    .box-container > div {
+        width: 100%;
+    }
+    .list-form {
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+    }
+  }

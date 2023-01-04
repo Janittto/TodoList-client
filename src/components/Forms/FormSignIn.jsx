@@ -22,7 +22,7 @@ const FormSignIn = () => {
 				console.log(res)
 				storeToken(res.authToken)
 				authenticateUser()
-				navigate("/profile")
+				navigate("/")
 			})
 			.catch((e) => {
 				setError(e.response.data)

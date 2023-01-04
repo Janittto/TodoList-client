@@ -11,6 +11,13 @@ html {
   font-family: "Karla", sans-serif;
 }
 
+:root {
+  --purple: #7D4FFE;
+  --purpleo : #7D4FFE33;
+  --pink: #E548FF;
+  --black: #000000;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -20,26 +27,27 @@ ul {
   list-style-type: none;
 }
 
-:root {
-  --green: #ccd5ae;
-  --lightgreen: #e9edc9;
-  --darkgreen: #8c9476;
-  --cream: #fefae0;
-  --beige: #faedcd;
-  --brownish: #d4a373;
-}
-
 h1 {
   font-size: 30px;
-  border-top: 1px solid var(--beige);
-  color: var(--green);
   padding: 10px;
 }
 
+h2 {
+  text-align: center;
+  color: var(--black)
+}
+
 button {
-  border-radius: 5px;
+  border-radius: 1rem;
+  background-color: var(--pink);
 }
 
 .container {
   margin-top: 80px;
+}
+
+@media screen and (max-width: 390px) {
+  .container {
+    margin-top: 2em;
+  }
 }

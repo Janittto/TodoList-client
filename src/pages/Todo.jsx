@@ -5,6 +5,7 @@ import service from "../api/apiHandler"
 
 const Todo = () => {
     const [list, setList] = useState([])
+    const [button, setButton] = useState(false)
 
     useEffect(() => {
         getListChange()
@@ -24,7 +25,8 @@ const Todo = () => {
     //if (!list.length) return <p>Loading ...</p>
 	return (
 		<div className="list container">
-            <FormNewList getListChange={getListChange}/>
+            {/* {!button? <ListCard oneList={oneList} id={id}/> : <FormEditList oneList={oneList} id={id} getListChange={getListChange} setButton={setButton}/>} */}
+            {/* <FormNewList getListChange={getListChange}/> */}
             <div className="box">
                 <div className="list-card box-container">
                     <h2>In progress</h2>
@@ -33,7 +35,11 @@ const Todo = () => {
                     })}
                 </div>
             </div>
-		</div>
+            <div>
+                <button onClick={() => setButton(!button)}className="add-btn">{!button? "New List" : "Back"}</button>
+                {!button? '' : <FormNewList getListChange={getListChange} setButton={setButton}/>}
+            </div>
+        </div>
 	)
 }
 

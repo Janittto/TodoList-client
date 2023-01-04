@@ -4,7 +4,6 @@ import "../../styles/Tasks/ListCardSmall.css"
 
 
 const ListCardSmall = ({task}) => {
-  console.log(task.urgent)
 	return (
       <div className={task.urgent? "urgent" : ""}>
             <Link key={task._id} to={`/todo/${task._id}`}>

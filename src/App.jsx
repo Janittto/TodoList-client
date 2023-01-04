@@ -14,15 +14,15 @@ function App() {
 		<div className="App">
 			<NavMain />
 			<Routes>
-				<Route path="/" element={<Home />} />
 				<Route element={<LoggedOut />}>
+					{/* <Route path="/" element={<Signin />} /> */}
 					<Route path="/signin" element={<Signin />} />
 					<Route path="/signup" element={<Signup />} />
 				</Route>
 				<Route element={<PrivateRoute />}>
 					{/* All routes after the PrivateRoute require the user to be loggedIn */}
-					<Route path="/profile" element={<Profile />} />
-					<Route path="/todo" element={<Todo />} />
+					{/* <Route path="/profile" element={<Profile />} /> */}
+					<Route path="/" element={<Todo />} />
 					<Route path="/todo/:id" element={<OneList />} />
 				</Route>
 			</Routes>
