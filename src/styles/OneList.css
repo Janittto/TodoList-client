@@ -1,9 +1,16 @@
 .one-list .box-container {
     position: relative;
+    background: var(--white);
 }
 
 .edit-btn {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+@media screen and (max-width: 450px) {
+    .one-list .box-container:first-child {
+        margin-bottom: 0.5rem;
+    }
 }

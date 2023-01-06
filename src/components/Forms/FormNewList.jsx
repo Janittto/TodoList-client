@@ -1,35 +1,19 @@
 import useForm from "../../hooks/useForm"
 import { useState } from "react"
 import service from "../../api/apiHandler"
+import Cross from "../../todo-cross.svg"
 import "../../styles/Forms/FormNewList.css"
 
 
-const FormNewList = ({getListChange, setButton}) => {
-    const [values, handleChange, reset] = useForm({ title: "", description: "", deadline: "", urgent: false})
-    const [error, setError] = useState(null)
-
-const handleSubmit = (e) => {
-    e.preventDefault()
-        service
-        .newList(values)
-        .then(async () => {
-            setButton(false)
-            await getListChange();
-            reset()
-        })
-        .catch((error) => {
-            setError(error.response.data)
-        })
-    }
-
-	return (
+const FormNewList = ({setButton, handleSubmit, values, handleChange, error}) => {
+return (
         <div className="box">
             <div className="list-form box-container">
-                <button onClick={()=> setButton(false)}>close</button>
+                <div onClick={()=> setButton(false)}><img src={Cross} alt="todo-cross"/></div>
                 <div>
                     <h2>New Tasks'List</h2>
                     <form onSubmit={handleSubmit}>
-                    <label htmlFor="title">List Title</label>
+                    <label htmlFor="title">Title</label>
                         <input
                             type="text"
                             id="title"
@@ -38,7 +22,7 @@ const handleSubmit = (e) => {
                             onChange={handleChange}
                             value={values.title}
                         />
-                    <label htmlFor="description">List Description</label>
+                    <label htmlFor="description">Description</label>
                         <textarea
                             type="text"
                             id="description"
@@ -49,22 +33,33 @@ const handleSubmit = (e) => {
                         />
                     <label htmlFor="date">Deadline: </label>
                         <input
-                        type="date"
-                        id="date"
-                        name="deadline"
-                        onChange={handleChange}
-                        value={values.deadline}
+                            type="date"
+                            id="date"
+                            name="deadline"
+                            onChange={handleChange}
+                            value={values.deadline}
                         />
-                    <label htmlFor="urgent">Is Urgent: </label>
-                        <input 
-                        type="checkbox" 
-                        id="urgent"
-                        name="urgent"
-                        onChange={handleChange}
-                        value={values.urgent}
-                        checked={values.urgent}
-                        />
+                    <div className="checkbox">
+                        <label htmlFor="urgent">Is Urgent: </label>
+                            <input 
+                                type="checkbox" 
+                                id="urgent"
+                                name="urgent"
+                                onChange={handleChange}
+                                value={values.urgent}
+                                checked={values.urgent}
+                            />
+                            <span className="checkmark"></span>
+                    </div>
                     <button>Submit</button>
+                    {error && error.message && (
+                        <p
+                            className="error"
+                            style={{ color: "red", textAlign: "center", marginTop: "1rem" }}
+                        >
+                            {error.message}
+                        </p>
+                    )}
                     </form>
                 </div>
             </div>

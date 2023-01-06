@@ -10,14 +10,18 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 50vw;
     border: 1px solid grey;
-    padding: 50px;
+    border-radius: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .box-container form {
     display: flex;
     flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5rem;;
 }
 
 form input, form textarea, form button {
@@ -28,23 +32,98 @@ form input, form textarea, form button {
 
 form input, form textarea {
     background-color: var(--purpleo);
+    margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 390px) {
-    .add-btn {
+form input:focus, form textarea:focus, form input:active, form textarea:active {
+    outline: none;
+    border: none !important;
+    -moz-appearance:none;
+}
+
+.checkbox {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 5rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: var(--purpleo);
+    border-radius: 50%;
+    border: 0.1rem solid var(--purple);
+}
+  
+  /* On mouse-over, add a grey background color */ 
+/* .checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}  */
+  
+  /* When the radio button is checked, add a blue background */
+  .checkbox input:checked ~ .checkmark {
+    background-color: var(--purple);
+}
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+  /* Show the indicator (dot/circle) when checked */
+  .checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+  /* Style the indicator (dot/circle) */
+  .checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+  .checkbox .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--purpleo);
+}
+
+@media screen and (max-width: 450px) {
+    .add-box {
         position: fixed;
-        bottom: 0;
+        bottom: 0.5rem;
+        width: 96%;
+        display: flex;
     }
     .box-container {
-        width: 100vw;
-        padding: 2rem;
+        padding: 1rem;
+        box-shadow: none;
+        border: 1px solid #e548ff;
     }
     .box-container > div {
         width: 100%;
     }
     .list-form {
         position: fixed;
-        bottom: 0;
+        bottom: 0.5rem;
         background-color: white;
+        width: 96%;
+        padding: 1rem;
+    }
+    .list-form > div:first-child {
+        display: flex;
+        position: absolute;
+        top: 0;
+        justify-content: flex-end;
+    }
+    .list-form > div:first-child img {
+        padding: 1rem;
     }
   }

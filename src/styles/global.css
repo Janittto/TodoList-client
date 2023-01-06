@@ -16,6 +16,7 @@ html {
   --purpleo : #7D4FFE33;
   --pink: #E548FF;
   --black: #000000;
+  --white: #FFFFFF;
 }
 
 a {
@@ -34,20 +35,22 @@ h1 {
 
 h2 {
   text-align: center;
-  color: var(--black)
+    color: var(--purple);
+    text-transform: uppercase;
+    font-size: 1.5rem;
 }
 
 button {
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   background-color: var(--pink);
+  padding: 0.3rem;
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-.container {
+/* .container {
   margin-top: 80px;
-}
-
-@media screen and (max-width: 390px) {
-  .container {
-    margin-top: 2em;
-  }
-}
+} */

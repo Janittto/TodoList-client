@@ -1,14 +1,36 @@
 .list-card > div {
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--purpleo);
+}
+
+.list-card > div:first-child {
+    width: 2rem;
+}
+
+.list-card > div > div:last-child {
+    margin-left: 1.5rem;
+}
+
+.list-card > div img {
+    width: 100%;
 }
 
 .urgent {
     background-color: var(--purpleo);
+    border-top: none!important;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 450px) {
     .list-card {
       padding: 0;
+      width: 100%;
+      background-color: white;
+      border: none;
     }
+    /* .list-card > div {
+    border-top: 1px solid var(--purpleo);
+    } */
 }

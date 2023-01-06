@@ -9,13 +9,13 @@ const ListCard = ({oneList, id}) => {
         service
           .deleteTasksList(id)
           .then(() => {
-            navigate("/todo")
+            navigate("/")
           })
           .catch((error) => {
             setError(error.response.data);
           });
-      };
-
+      }
+      
 	return (
       <div>
         <h2>{oneList.title}</h2>

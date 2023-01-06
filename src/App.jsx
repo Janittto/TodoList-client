@@ -23,7 +23,7 @@ function App() {
 					{/* All routes after the PrivateRoute require the user to be loggedIn */}
 					{/* <Route path="/profile" element={<Profile />} /> */}
 					<Route path="/" element={<Todo />} />
-					<Route path="/todo/:id" element={<OneList />} />
+					<Route path="/:id" element={<OneList />} />
 				</Route>
 			</Routes>
 		</div>
