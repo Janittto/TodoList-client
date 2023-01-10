@@ -3,10 +3,16 @@
     background: var(--white);
 }
 
+.one-list h3 {
+    text-align: center;
+}
+
 .edit-btn {
     position: absolute;
     top: 0;
     right: 0;
+    background: none;
+    padding: 1rem;
 }
 
 @media screen and (max-width: 450px) {

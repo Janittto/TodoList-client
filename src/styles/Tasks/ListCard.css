@@ -1,0 +1,12 @@
+.card-detail button{
+    width: 100%;
+}
+
+.card-detail p {
+    margin-bottom: 0.5rem;
+}
+
+.card-detail span {
+    color: var(--purple);
+    font-weight: bold;
+}

@@ -35,6 +35,10 @@ form input, form textarea {
     margin-bottom: 1rem;
 }
 
+form input:-internal-autofill-selected {
+    background-color: var(--purpleo)!important;
+}
+
 form input:focus, form textarea:focus, form input:active, form textarea:active {
     outline: none;
     border: none !important;

@@ -1,0 +1,6 @@
+.single-task {
+    border-top: 0.1rem solid var(--purpleo);
+    border-bottom: 0.1rem solid var(--purpleo);
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}

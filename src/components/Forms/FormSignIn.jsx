@@ -30,29 +30,35 @@ const FormSignIn = () => {
 	}
 
 	return (
-		<>
-			{error && <h3 className="error">{error.message}</h3>}
-			<form onSubmit={handleSubmit}>
-				<h2>Signin</h2>
-				<label htmlFor="email">Email</label>
-				<input
-					type="email"
-					id="email"
-					name="email"
-					onChange={handleChange}
-					value={email}
-				/>
-				<label htmlFor="password">Password</label>
-				<input
-					type="password"
-					id="password"
-					name="password"
-					onChange={handleChange}
-					value={password}
-				/>
-				<button>Submit</button>
-			</form>
-		</>
+		<div className="container">
+			<div className="box">
+				<div className="box-container">
+					<div>
+					{error && <h3 className="error">{error.message}</h3>}
+					<form onSubmit={handleSubmit}>
+						<h2>Signin</h2>
+						<label htmlFor="email">Email</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							onChange={handleChange}
+							value={email}
+						/>
+						<label htmlFor="password">Password</label>
+						<input
+							type="password"
+							id="password"
+							name="password"
+							onChange={handleChange}
+							value={password}
+						/>
+						<button>Submit</button>
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	)
 }
 

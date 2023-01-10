@@ -1,0 +1,31 @@
+.task-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.done p {
+    text-decoration:  line-through;
+}
+
+.task-card > div:last-child {
+    display: flex;
+}
+
+.task-card form {
+    flex-direction: row;
+}
+
+.task-card .checkmark {
+    left : 4rem;
+}
+
+/* .task-card button {
+    width : 1.5rem;
+} */
+
+.task-card button:last-child {
+    margin-left: 1rem;
+}
+

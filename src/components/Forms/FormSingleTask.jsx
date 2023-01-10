@@ -1,6 +1,7 @@
 import useForm from "../../hooks/useForm"
 import { useState } from "react"
 import service from "../../api/apiHandler"
+import "../../styles/Forms/FormSingleTask.css"
 
 
 const FormSingleTask = ({id, getListChange}) => {
@@ -21,8 +22,8 @@ const handleSubmit = (e) => {
     }
 
 	return (
-		<div>
-            <h2>add a New task</h2>
+		<div className="single-task form">
+            <h3>Add a new task to do</h3>
             <form onSubmit={handleSubmit}>
             <label htmlFor="title">title </label>
                 <input 

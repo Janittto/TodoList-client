@@ -4,7 +4,7 @@ import service from "../../api/apiHandler"
 
 
 const FormEditList = ({oneList, id, getListChange, setButton}) => {
-    const [values, handleChange] = useForm({title: oneList.title, description: oneList.description, deadline: oneList.deadline.split("T")[0], urgent: oneList.urgent, done: oneList.done,})
+    const [values, handleChange] = useForm({title: oneList.title, description: oneList.description, deadline: oneList.deadline.split("T")[0], urgent: oneList.urgent, done: oneList.done})
     const [error, setError] = useState(null)
 	//const navigate = useNavigate()
     
@@ -24,7 +24,7 @@ const handleSubmit = (e) => {
 
 	return (
 		<div>
-            <h1>Edit the list</h1>
+            <h2>Edit the list</h2>
             <form onSubmit={handleSubmit}>
             <label htmlFor="title">Title</label>
 				<input
@@ -50,24 +50,32 @@ const handleSubmit = (e) => {
                 onChange={handleChange}
                 value={values.deadline}
                 />
-            <label htmlFor="urgent">Is Urgent: </label>
-                <input  
-                className={values.urgent ? "checked" : ''}
-                type="checkbox" 
-                id="urgent"
-                name="urgent"
-                onChange={handleChange}
-                value={values.urgent}
-                />
-            <label htmlFor="done">Is Done: </label>
-                <input 
-                className={values.done ? "checked" : ''}
-                type="checkbox" 
-                id="done"
-                name="done"
-                onChange={handleChange}
-                value={values.done}
-                />
+            <div className="checkbox">
+                <label htmlFor="urgent">Is Urgent: </label>
+                    <input  
+                    checked={values.urgent ? true : false}
+                    className={values.urgent ? "checked" : ''}
+                    type="checkbox" 
+                    id="urgent"
+                    name="urgent"
+                    onChange={handleChange}
+                    value={values.urgent}
+                    />
+                <span className="checkmark"></span>
+            </div>
+            <div className="checkbox">
+                <label htmlFor="done">Is Done: </label>
+                    <input 
+                    checked={values.done ? true : false}
+                    className={values.done ? "checked" : ''}
+                    type="checkbox" 
+                    id="done"
+                    name="done"
+                    onChange={handleChange}
+                    value={values.done}
+                    />
+                <span className="checkmark"></span>
+            </div>
             <button>Submit</button>
             </form>
         </div>

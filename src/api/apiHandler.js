@@ -94,6 +94,13 @@ const service = {
       .catch(errorHandler);
   },
 
+  updateSingleTask(taskInfo, values) {
+    return service
+      .patch(`api/todo/singleTask/${taskInfo}`, values)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
   deleteSingleTask(taskInfo) {
     return service
       .delete(`api/todo/singleTask/${taskInfo}`, taskInfo)

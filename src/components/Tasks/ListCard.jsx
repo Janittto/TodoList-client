@@ -1,6 +1,7 @@
 import React from "react"
 import { useNavigate } from "react-router-dom";
 import service from "../../api/apiHandler";
+import "../../styles/Tasks/ListCard.css"
 
 const ListCard = ({oneList, id}) => {
     const navigate = useNavigate();
@@ -17,17 +18,17 @@ const ListCard = ({oneList, id}) => {
       }
       
 	return (
-      <div>
+      <div className="card-detail">
         <h2>{oneList.title}</h2>
-        <button onClick={handleDelete}>Delete the list</button>
         <p>{oneList.description}</p>
-        <span>
-            {new Intl.DateTimeFormat("en-GB").format(
+        <p>
+            Deadline : {new Intl.DateTimeFormat("en-GB").format(
             new Date(oneList.deadline)
             )}
-        </span>
-        <p>{oneList.urgent ? "urgent" : "not urgent"}</p>
-        <p>{oneList.done ? "done" : ""}</p>
+        </p>
+        <p>{oneList.urgent ? <span>Urgent</span> : ""}</p>
+        <p>{oneList.done ? <span>Done</span> : ""}</p>
+        <button onClick={handleDelete}>Delete the list</button>
       </div>
 	);
 };

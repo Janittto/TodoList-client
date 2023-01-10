@@ -21,7 +21,7 @@ function App() {
 				</Route>
 				<Route element={<PrivateRoute />}>
 					{/* All routes after the PrivateRoute require the user to be loggedIn */}
-					{/* <Route path="/profile" element={<Profile />} /> */}
+					<Route path="/profile" element={<Profile />} />
 					<Route path="/" element={<Todo />} />
 					<Route path="/:id" element={<OneList />} />
 				</Route>

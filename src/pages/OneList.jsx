@@ -5,6 +5,8 @@ import FormEditList from "../components/Forms/FormEditList";
 import FormSingleTask from "../components/Forms/FormSingleTask";
 import TaskCardSmall from "../components/Tasks/TaskCardSmall";
 import ListCard from "../components/Tasks/ListCard";
+import Cross from "../todo-cross.svg"
+import Edit from "../todo-edit.svg"
 import "../styles/OneList.css"
 
 const OneList = () => {
@@ -33,12 +35,13 @@ const OneList = () => {
 		<div className="one-list container">
             <div className="box">
                 <div className="box-container">
-                    <button onClick={() => setButton(!button)}className="edit-btn">{!button? "Edit the list" : 'Back'}</button>
+                    <button onClick={() => setButton(!button)}className="edit-btn">{!button? <img src={Edit} alt="todo-edit"/> : <img src={Cross} alt="todo-cross"/>}</button>
                     {!button? <ListCard oneList={oneList} id={id}/> : <FormEditList oneList={oneList} id={id} getListChange={getListChange} setButton={setButton}/>}
                 </div>
                 <div className="box-container">
+                    <h2>Tasks</h2>
                     <FormSingleTask id={id} getListChange={getListChange}/>
-                    <h2>all tasks</h2>
+                    <h3>Your tasks</h3>
                     <div>{oneList.tasks.map((task) => {
                             return (
                             <TaskCardSmall key={task._id} id={id} task={task} getListChange={getListChange}/>
